@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 
 class Site:
     """
@@ -15,19 +14,16 @@ class Site:
         """
         Create Directory
         """
-        self.path = path
-        self.directory = f"{self.dest}/{path.relative_to(self.source)}"
+        directory = self.dest / path.relative_to(self.source)
+        directory.mkdir(parents=True, exists_ok=True)
 
-        os.mkdir(directory, parents=True, exists_ok=True)
     
-    def build(self, path):
+    def build(self):
 
-        self.path = path
-        os.mkdir(self.dest, parents=True, exists_ok=True)
-
+        self.dest.mkdir(parents=True, exists_ok=True)
         for path in self.source.rglob("*"):
-            if path == directory:
-                create_dir(path)
+            if path.id_dir():
+                self.create_dir(path)
 
             
 

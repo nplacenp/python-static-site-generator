@@ -9,5 +9,6 @@ def main(source='content', dest='dist'):
         'dest': dest,
     }
 
-    New_Site = Site(source, dest)
-    New_Site.build(main)
+    Site(**config).build()
+
+typer.run(main)
