@@ -5,9 +5,7 @@ from pathlib import Path
 import shutil
 
 class Parser:
-    
-    def __init__(self, extensions):
-        return extensions: List[str] = []
+    extensions: List[str] = []
 
     def valid_extension(self, extension):
 
