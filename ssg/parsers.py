@@ -7,11 +7,12 @@ import shutil
 class Parser:
     
     def __init__(self, extensions):
-        self.extensions = extensions: List[str] = []
+        return extensions: List[str] = []
 
     def valid_extension(self, extension):
 
         return extension in self.extensions
+
     def parse(self, path, source, dest):
         path: Path
         source: Path
